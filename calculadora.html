@@ -5,41 +5,51 @@
     <title>raonidev</title>
 </head>
 <body>
-    <h1> Minha Calculadora</h1>
-
-    Primeiro Número<br>
+    <h1> My Calculator</h1>
+    <h2 style="font-size: 32px">  Resolve all your problems</h2>
+    <p>Choose your number</p>
+    
+    first number<br>
     <input id="n1" type="number" /><br />
-    Segundo Número<br />
+    Second Number<br />
     <input id="n2" type="number" /><br />
     <br />
-    <button onclick="somar()">+</button>
-    <button onclick="subtrair()">-</button>
-    <button onclick="multiplicar()">*</button>
-    <button onclick="dividir()">/</button>
+    <button onclick="add()">+</button>
+    <button onclick="subtract()">-</button>
+    <button onclick="multiply()">*</button>
+    <button onclick="divide()">/</button>
+    <button onclick="clean()">C</button>
+
     <br /><br />
-    Resultado: <span></span>
+    result: <span></span>
    <script>
-    var n1 = document.querySelector('#n1')
+   var n1 = document.querySelector('#n1')
     var n2 = document.querySelector('#n2')
-    var resultado = document.querySelector('span')
+    var result = document.querySelector('span')
 
-    function somar() {
-        resultado.innerHTML = parseInt(n1.value) + parseInt(n2.value)
+    function add() {
+        result.innerHTML = parseInt(n1.value) + parseInt(n2.value)
     }
 
-    function subtrair() {
-        resultado.innerHTML = parseInt(n1.value) - parseInt(n2.value)
+    function subtract() {
+        result.innerHTML = parseInt(n1.value) - parseInt(n2.value)
     }
 
-    function multiplicar() {
-        resultado.innerHTML = parseInt(n1.value) * parseInt(n2.value)
+    function multiply() {
+        result.innerHTML = parseInt(n1.value) * parseInt(n2.value)
     }    
     
-    function dividir() {
-        resultado.innerHTML = parseInt(n1.value) / parseInt(n2.value)
+    function divide() {
+        result.innerHTML = parseFloat(n1.value) / parseFloat(n2.value)
+        alert(parseFloat(n1.value) % parseFloat(n2.value))
+         
     } 
-    
-    
-   </script>
+    function clean() {
+      n1.value = null 
+      n2.value = null
+      result.innerHTML = null         
+    }  
+
+  </script>
 </body>
 </html>
